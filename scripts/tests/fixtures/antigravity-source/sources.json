@@ -1,0 +1,7 @@
+{
+  "sample": {
+    "local": "upstream/sample",
+    "agents": "com.github.copilot/agents",
+    "upstreamVersion": "0.1.0"
+  }
+}

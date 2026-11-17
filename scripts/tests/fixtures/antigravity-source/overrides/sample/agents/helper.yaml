@@ -1,0 +1,6 @@
+name: helper
+description: Antigravity helper agent.
+mainAgent: true
+subagent: true
+model: inherit
+commandExecutionPolicy: sandbox

@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    {
+      "plugin": "sample",
+      "file": "agents/helper.md",
+      "find": "Never call `task` with `agent_type: \"sample:helper\"`.",
+      "replace": "Do not spawn another `helper` subagent."
+    }
+  ],
+  "allowlist": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "sample",
+  "displayName": "Sample (Community)",
+  "version": "1.0.0",
+  "description": "Sample community plugin fixture for testing the Antigravity plugin generator and validator.",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "Run sample check",
+    "Inspect sample skill",
+    "Validate sample fixture"
+  ],
+  "author": {
+    "name": "momochisoundpost",
+    "url": "https://github.com/momochisoundpost"
+  },
+  "homepage": "https://github.com/momochisoundpost/win-dev-skills-antigravity",
+  "repository": "https://github.com/momochisoundpost/win-dev-skills-antigravity",
+  "license": "MIT",
+  "keywords": ["windows", "sample"]
+}
