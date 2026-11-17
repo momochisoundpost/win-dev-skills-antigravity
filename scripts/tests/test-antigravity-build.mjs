@@ -140,3 +140,30 @@ await run("test_fails_on_agent_override_mismatch_or_skill_folder_mismatch", asyn
     fs.rmSync(rootB, { recursive: true, force: true });
   }
 });
+
+await run("test_copies_extra_files_and_windbg_feedback_and_no_skills_json_ref", async () => {
+  const root = copyFixture();
+  try {
+    fs.writeFileSync(path.join(root, "upstream", "sample", "EXTRA.md"), "# Extra\n");
+    const sourcesPath = path.join(root, "sources.json");
+    const sources = JSON.parse(fs.readFileSync(sourcesPath, "utf8"));
+    sources.sample.extraFiles = ["EXTRA.md"];
+    fs.writeFileSync(sourcesPath, JSON.stringify(sources, null, 2));
+
+    await buildAll(buildOpts(root));
+    assert.ok(fs.existsSync(path.join(root, "out", "sample", "EXTRA.md")));
+
+    const repoRoot = path.resolve(here, "..", "..");
+    assert.ok(
+      fs.existsSync(path.join(repoRoot, "antigravity", "plugins", "windbg", "FEEDBACK.md")),
+      "antigravity/plugins/windbg/FEEDBACK.md must exist",
+    );
+    const diagText = fs.readFileSync(
+      path.join(repoRoot, "antigravity", "plugins", "windbg", "agents", "diagnostician.md"),
+      "utf8",
+    );
+    assert.doesNotMatch(diagText, /skills\.json/);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});

@@ -23,6 +23,12 @@
       "file": "agents/diagnostician.md",
       "find": "1. Invoke the bundled `contrarian` agent by name as an independent sub-agent\n   when the host supports sub-agents. Give it the complete proposed diagnosis.",
       "replace": "1. Invoke the bundled `contrarian` subagent using `invoke_subagent`\n   (`TypeName: \"contrarian\"`) when subagents are available. Give it the complete proposed diagnosis."
+    },
+    {
+      "plugin": "windbg",
+      "file": "agents/diagnostician.md",
+      "find": "`skills.json` is the complete\ninventory.",
+      "replace": "The 10 triage skills above plus `windbg-diagnostic-method` are the complete\ninventory."
     }
   ],
   "allowlist": []

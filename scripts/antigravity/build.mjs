@@ -237,6 +237,25 @@ function writeManifestAndMeta(pluginName, source, overrideDir, repoRoot, pluginO
   fs.writeFileSync(path.join(pluginOutDir, "NOTICE.md"), buildNoticeText(pluginName, source));
 }
 
+function copyExtraFiles(sourceDir, pluginOutDir, extraFiles = []) {
+  for (const relPath of extraFiles) {
+    const srcPath = path.resolve(sourceDir, relPath);
+    if (!srcPath.startsWith(`${path.resolve(sourceDir)}${path.sep}`)) {
+      throw new Error(`extraFiles path escapes source directory: ${relPath}`);
+    }
+    if (!fs.existsSync(srcPath)) {
+      throw new Error(`extraFiles source missing: ${relPath}`);
+    }
+    const dstPath = path.resolve(pluginOutDir, relPath);
+    if (!dstPath.startsWith(`${path.resolve(pluginOutDir)}${path.sep}`)) {
+      throw new Error(`extraFiles path escapes plugin directory: ${relPath}`);
+    }
+    fs.mkdirSync(path.dirname(dstPath), { recursive: true });
+    fs.copyFileSync(srcPath, dstPath);
+    fs.chmodSync(dstPath, fs.statSync(srcPath).mode & 0o777);
+  }
+}
+
 function writeGeneratedHeader(targetRoot) {
   const banner = [
     "# Generated Antigravity Plugins",
@@ -288,6 +307,7 @@ export async function buildAll({
         path.join(pluginOutDir, "agents"),
       );
       writeManifestAndMeta(pluginName, source, overrideDir, repoRoot, pluginOutDir);
+      copyExtraFiles(sourceDir, pluginOutDir, source.extraFiles);
       applyRewrites(pluginName, pluginOutDir, rewrites);
 
       const hits = findHostReferences(pluginOutDir, allowlist, pluginName);

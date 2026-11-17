@@ -58,7 +58,7 @@ Confidence is explanatory judgment, not measured probability.
 
 The user-mode skills apply to native applications, services, and user-mode
 drivers such as UMDF drivers running in a user-mode host process. The
-kernel-mode skills apply to kernel-mode drivers. `skills.json` is the complete
+kernel-mode skills apply to kernel-mode drivers. The 10 triage skills above plus `windbg-diagnostic-method` are the complete
 inventory. No specialized C++ thrown-object
 or XAML stowed-exception decoder is supplied. For unsupported families continue
 evidence-led reasoning, state the coverage gap, and do not dispatch to absent

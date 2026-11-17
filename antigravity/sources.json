@@ -18,6 +18,7 @@
   "windbg": {
     "local": "plugins/windbg",
     "agents": "com.github.copilot/agents",
+    "extraFiles": ["FEEDBACK.md"],
     "upstreamVersion": "1.0.0"
   }
 }
