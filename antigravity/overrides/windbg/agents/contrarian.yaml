@@ -1,0 +1,6 @@
+name: contrarian
+description: Independently challenges a proposed Diagnostician root cause, trigger evidence, alternatives, confidence, fix strength, and diagram consistency.
+mainAgent: false
+subagent: true
+model: inherit
+tools: []

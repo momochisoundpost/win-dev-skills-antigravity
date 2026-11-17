@@ -1,0 +1,6 @@
+name: diagnostician
+description: Diagnose native Windows application, service, user-mode driver (including UMDF), and kernel-mode driver failures with public WinDbg workflows.
+mainAgent: true
+subagent: true
+model: inherit
+commandExecutionPolicy: sandbox

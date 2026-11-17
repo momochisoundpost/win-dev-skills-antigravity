@@ -1,0 +1,29 @@
+{
+  "name": "winui",
+  "displayName": "WinUI 3 Dev (Community)",
+  "version": "1.0.0",
+  "description": "Build, design, test, and package native WinUI 3 and Windows App SDK desktop apps on Windows with XAML, Fluent UI, and winapp.",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "Create a new WinUI 3 app with MVVM",
+    "Migrate this WPF app to WinUI 3",
+    "Review my XAML layout and theme accessibility"
+  ],
+  "author": {
+    "name": "momochisoundpost",
+    "url": "https://github.com/momochisoundpost"
+  },
+  "homepage": "https://github.com/momochisoundpost/win-dev-skills-antigravity",
+  "repository": "https://github.com/momochisoundpost/win-dev-skills-antigravity",
+  "license": "MIT",
+  "keywords": [
+    "windows",
+    "winui",
+    "winui3",
+    "xaml",
+    "windows-app-sdk",
+    "fluent",
+    "msix",
+    "wpf-migration"
+  ]
+}

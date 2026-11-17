@@ -1,0 +1,6 @@
+name: winapp
+description: Windows app packaging, signing, identity, SDK setup, Windows API lookup, and UI automation for any framework (Electron, .NET, C++, Rust, Flutter, Tauri) with the winapp CLI. Use for MSIX installers, certificates, package identity, appxmanifest edits, or driving a running Windows app.
+mainAgent: true
+subagent: true
+model: inherit
+commandExecutionPolicy: sandbox

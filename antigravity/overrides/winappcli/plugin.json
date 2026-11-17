@@ -1,0 +1,31 @@
+{
+  "name": "winappcli",
+  "displayName": "WinApp CLI (Community)",
+  "version": "1.0.0",
+  "description": "Package, sign, and configure Windows apps (Electron, .NET, C++, Rust, Flutter, Tauri) with WinApp CLI, MSIX, and SDK workflows.",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "Package this app as a signed MSIX installer",
+    "Add package identity and Windows SDK setup",
+    "Inspect and automate UI on my running Windows app"
+  ],
+  "author": {
+    "name": "momochisoundpost",
+    "url": "https://github.com/momochisoundpost"
+  },
+  "homepage": "https://github.com/momochisoundpost/win-dev-skills-antigravity",
+  "repository": "https://github.com/momochisoundpost/win-dev-skills-antigravity",
+  "license": "MIT",
+  "keywords": [
+    "windows",
+    "winapp",
+    "msix",
+    "packaging",
+    "signing",
+    "identity",
+    "electron",
+    "tauri",
+    "flutter",
+    "dotnet"
+  ]
+}

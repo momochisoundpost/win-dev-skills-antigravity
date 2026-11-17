@@ -1,0 +1,29 @@
+{
+  "rewrites": [
+    {
+      "plugin": "winui",
+      "file": "agents/winui-dev.md",
+      "find": "You are `winui-dev` — don't call `task` with `agent_type: \"winui:winui-dev\"` (self-hop). `task` is fine for scoped helpers (`explore` for parallel codebase mapping, `general-purpose` for rubber-duck critique), not for the build itself.",
+      "replace": "You are `winui-dev` — do not spawn another `winui-dev` subagent to do the build for you. Using `invoke_subagent` for scoped helpers (`research` for parallel codebase mapping, `self` for a critique pass) is fine, not for the build itself."
+    },
+    {
+      "plugin": "winui",
+      "file": "skills/winui-setup/SKILL.md",
+      "find": "If the current harness exposes the `winui-dev` orchestrator agent,\nstart a fresh session with that agent and ask it to build a WinUI app. Otherwise,\nstart a fresh session in the current harness and ask it to perform the WinUI task;\nit will load the relevant `winui-*` skills on demand.\n\nFor GitHub Copilot CLI, for example:\n\n    copilot --agent winui:winui-dev -p \"build me a WinUI 3 markdown editor\"",
+      "replace": "Start a fresh session in Antigravity with the **winui-dev** agent selected (in the App agent picker, `/agents`, or `agy --agent winui-dev`), or stay on the default agent and ask for a WinUI task so it loads the relevant `winui-*` skills on demand.\n\nFor example, in Antigravity CLI:\n\n    agy --agent winui-dev"
+    },
+    {
+      "plugin": "windbg",
+      "file": "skills/windbg-diagnostic-method/SKILL.md",
+      "find": "1. When the host supports the bundled Copilot agents, invoke the `contrarian`\n   agent once with the complete proposed diagnosis.",
+      "replace": "1. When subagents are available, invoke the bundled `contrarian` subagent once\n   with `invoke_subagent` (`TypeName: \"contrarian\"`) and pass the complete proposed diagnosis."
+    },
+    {
+      "plugin": "windbg",
+      "file": "agents/diagnostician.md",
+      "find": "1. Invoke the bundled `contrarian` agent by name as an independent sub-agent\n   when the host supports sub-agents. Give it the complete proposed diagnosis.",
+      "replace": "1. Invoke the bundled `contrarian` subagent using `invoke_subagent`\n   (`TypeName: \"contrarian\"`) when subagents are available. Give it the complete proposed diagnosis."
+    }
+  ],
+  "allowlist": []
+}

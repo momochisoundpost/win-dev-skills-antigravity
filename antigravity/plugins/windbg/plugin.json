@@ -1,0 +1,30 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "windbg",
+  "displayName": "WinDbg Diagnostics (Community)",
+  "version": "1.0.0",
+  "description": "WinDbg crash, hang, heap, and kernel/user-mode driver triage workflows with structured reports and deterministic validation.",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "Analyze this crash stack or dump using WinDbg triage",
+    "Investigate a deadlock or hang in my Windows service",
+    "Run the full WinDbg diagnosis report workflow"
+  ],
+  "author": {
+    "name": "momochisoundpost",
+    "url": "https://github.com/momochisoundpost"
+  },
+  "homepage": "https://github.com/momochisoundpost/win-dev-skills-antigravity",
+  "repository": "https://github.com/momochisoundpost/win-dev-skills-antigravity",
+  "license": "MIT",
+  "keywords": [
+    "windows",
+    "windbg",
+    "debugging",
+    "crash",
+    "hang",
+    "memory",
+    "umdf",
+    "drivers"
+  ]
+}

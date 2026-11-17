@@ -1,0 +1,23 @@
+{
+  "winui": {
+    "repo": "https://github.com/microsoft/winappCli.git",
+    "ref": "v0.8.0",
+    "sha": "696222f72e80c669671845bd6c7b0286eefab987",
+    "path": "plugins/winui/agent-plugin",
+    "agents": "com.github.copilot/agents",
+    "upstreamVersion": "0.8.0"
+  },
+  "winappcli": {
+    "repo": "https://github.com/microsoft/winappCli.git",
+    "ref": "v0.8.0",
+    "sha": "696222f72e80c669671845bd6c7b0286eefab987",
+    "path": "plugins/winapp",
+    "agents": "com.github.copilot/agents",
+    "upstreamVersion": "0.8.0"
+  },
+  "windbg": {
+    "local": "plugins/windbg",
+    "agents": "com.github.copilot/agents",
+    "upstreamVersion": "1.0.0"
+  }
+}
