@@ -22,6 +22,7 @@ jobs:
 
   auto-tag:
     name: Tag main HEAD as vX.Y.Z
+    if: github.repository == 'microsoft/win-dev-skills'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

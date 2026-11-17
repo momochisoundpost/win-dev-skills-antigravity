@@ -17,6 +17,7 @@ export function copyDirFiltered(srcDir, dstDir, filterFn) {
   function walk(currentSrc, currentDst, relPrefix) {
     const entries = fs.readdirSync(currentSrc, { withFileTypes: true });
     for (const entry of entries) {
+      if (entry.name === ".DS_Store") continue;
       const relPath = relPrefix ? `${relPrefix}/${entry.name}` : entry.name;
       if (filterFn && !filterFn(relPath, entry)) continue;
       const srcPath = path.join(currentSrc, entry.name);
@@ -43,6 +44,7 @@ export function listFilesRelative(rootDir) {
   function walk(dir, relPrefix) {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
     for (const entry of entries) {
+      if (entry.name === ".DS_Store") continue;
       const relPath = relPrefix ? `${relPrefix}/${entry.name}` : entry.name;
       const fullPath = path.join(dir, entry.name);
       if (entry.isDirectory()) {

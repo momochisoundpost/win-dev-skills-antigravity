@@ -115,3 +115,19 @@ run("test_lib_helpers_preserve_modes_diff_and_scan_host_refs", () => {
     fs.rmSync(tmp, { recursive: true, force: true });
   }
 });
+
+run("test_lib_ignores_ds_store", () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "ag-ds-test-"));
+  try {
+    const a = path.join(tmp, "a");
+    const b = path.join(tmp, "b");
+    fs.mkdirSync(a, { recursive: true });
+    fs.mkdirSync(b, { recursive: true });
+    fs.writeFileSync(path.join(a, "file.txt"), "hello\n");
+    fs.writeFileSync(path.join(b, "file.txt"), "hello\n");
+    fs.writeFileSync(path.join(b, ".DS_Store"), "finder noise");
+    assert.deepEqual(diffDirectories(a, b), []);
+  } finally {
+    fs.rmSync(tmp, { recursive: true, force: true });
+  }
+});

@@ -13,6 +13,7 @@ permissions:
 jobs:
   catalog-check:
     name: Catalog check
+    if: github.repository == 'microsoft/win-dev-skills'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,6 +33,7 @@ jobs:
 
   vally-lint:
     name: Local plugin lint (vally)
+    if: github.repository == 'microsoft/win-dev-skills'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
